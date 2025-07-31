@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alibaba-Style Header</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://kit.fontawesome.com/6cf37bd2b2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- Top Header -->
+<div class="top-header">
+  <div class="logo">
+    <i class="fas fa-shopping-bag"></i>
+    <span>Brand</span>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search" />
+    <select>
+      <option>All category</option>
+      <option>Electronics</option>
+      <option>Fashion</option>
+    </select>
+    <button>Search</button>
+  </div>
+
+  <div class="top-icons">
+    <a href="#"><i class="far fa-user"></i><span>Profile</span></a>
+    <a href="#"><i class="far fa-comment-alt"></i><span>Message</span></a>
+    <a href="#"><i class="far fa-heart"></i><span>Orders</span></a>
+    <a href="#"><i class="fas fa-shopping-cart"></i><span>My cart</span></a>
+  </div>
+</div>
+
+<!-- Navbar -->
+<div class="navbar">
+  <div class="nav-left">
+    <i class="fas fa-bars"></i><span>All category</span>
+    <a href="#">Hot offers</a>
+    <a href="#">Gift boxes</a>
+    <a href="#">Projects</a>
+    <a href="#">Menu item</a>
+    <a href="#">Help <i class="fas fa-chevron-down"></i></a>
+  </div>
+  <div class="nav-right">
+    <span>English, USD <i class="fas fa-chevron-down"></i></span>
+    <div class="ship-to">
+      <span class="selected-country" id="selected-country">
+        Ship to <img src="https://flagcdn.com/w20/de.png" alt="Germany Flag" />
+        <i class="fas fa-chevron-down"></i>
+      </span>
+      <div class="country-dropdown" id="country-dropdown">
+        <div data-flag="https://flagcdn.com/w20/de.png" data-name="Germany">Germany</div>
+        <div data-flag="https://flagcdn.com/w20/pk.png" data-name="Pakistan">Pakistan</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="brand-logo">
+        <i class="fas fa-shopping-bag"></i>
+        <span>Brand</span>
+      </div>
+      <p>Best information about the company goes here but now lorem ipsum is</p>
+      <div class="social-icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-linkedin-in"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>About</h4>
+        <a href="#">About Us</a>
+        <a href="#">Find store</a>
+        <a href="#">Categories</a>
+        <a href="#">Blogs</a>
+      </div>
+      <div>
+        <h4>Partnership</h4>
+        <a href="#">About Us</a>
+        <a href="#">Find store</a>
+        <a href="#">Categories</a>
+        <a href="#">Blogs</a>
+      </div>
+      <div>
+        <h4>Information</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Money Refund</a>
+        <a href="#">Shipping</a>
+        <a href="#">Contact us</a>
+      </div>
+      <div>
+        <h4>For users</h4>
+        <a href="#">Login</a>
+        <a href="#">Register</a>
+        <a href="#">Settings</a>
+        <a href="#">My Orders</a>
+      </div>
+      <div class="footer-apps">
+        <h4>Get app</h4>
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" />
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2023 Ecommerce.</span>
+    <span class="language">
+      <img src="https://flagcdn.com/us.svg" alt="US Flag" />
+      English <i class="fas fa-chevron-up"></i>
+    </span>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('selected-country');
+  const dropdown = document.getElementById('country-dropdown');
+
+  toggle.addEventListener('click', () => {
+    dropdown.classList.toggle('show');
+  });
+
+  dropdown.querySelectorAll('div').forEach(item => {
+    item.addEventListener('click', () => {
+      const flag = item.getAttribute('data-flag');
+      const name = item.getAttribute('data-name');
+      toggle.innerHTML = `Ship to <img src="${flag}" alt="${name} Flag" /> <i class="fas fa-chevron-down"></i>`;
+      dropdown.classList.remove('show');
+    });
+  });
+
+  window.addEventListener('click', function (e) {
+    if (!toggle.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.remove('show');
+    }
+  });
+</script>
+
+
+<script>
+  // Generic dropdown toggler
+  document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function (e) {
+      const parent = this.closest('.dropdown');
+      parent.classList.toggle('show');
+
+      // Close other dropdowns
+      document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== parent) d.classList.remove('show');
+      });
+
+      e.stopPropagation();
+    });
+  });
+
+  // Close all dropdowns on outside click
+  window.addEventListener('click', function () {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
+  });
+</script>
+
+
+</body>
+</html>

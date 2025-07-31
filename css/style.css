@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Top Header */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: #1a73e8;
+  font-weight: bold;
+}
+
+.logo i {
+  margin-right: 8px;
+}
+
+.search-bar {
+  display: flex;
+  border: 2px solid #1a73e8;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 40%;
+}
+
+.search-bar input {
+  padding: 10px;
+  flex: 1;
+  border: none;
+  outline: none;
+}
+
+.search-bar select {
+  border: none;
+  padding: 10px;
+  background-color: #f0f0f0;
+  outline: none;
+}
+
+.search-bar button {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.top-icons {
+  display: flex;
+  gap: 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+.top-icons div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.top-icons i {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px 40px;
+  font-size: 14px;
+  border-top: 1px solid #eee;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-left a {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-left span,
+.nav-right span {
+  cursor: pointer;
+}
+
+.nav-right img {
+  width: 20px;
+  height: 14px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.ship-to {
+  position: relative;
+}
+
+.ship-to .country-dropdown {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  width: 120px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.ship-to .country-dropdown div {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.ship-to .country-dropdown div:hover {
+  background-color: #f0f0f0;
+}
+
+.country-dropdown.show {
+  display: block;
+}
+
+/* Footer */
+.footer {
+  margin-top: 420px; /* Add spacing from header or main content */
+  background-color: #ffffff;
+  border-top: 1px solid #e6e6e6;
+  font-size: 14px;
+  color: #555;
+  padding: 40px;
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-brand {
+  max-width: 220px;
+  flex: 1;
+}
+
+.footer-brand .brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: bold;e
+  color: #1a73e8;
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  margin: 10px 0;
+  color: #777;
+}
+
+.social-icons i {
+  font-size: 16px;
+  margin-right: 10px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  flex: 3 1 600px;
+  gap: 20px;
+}
+
+.footer-links div {
+  min-width: 140px;
+}
+
+.footer-links h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.footer-links a {
+  display: block;
+  margin: 6px 0;
+  text-decoration: none;
+  color: #777;
+}
+
+.footer-links a:hover {
+  color: #333;
+}
+
+.footer-apps img {
+  width: 120px;
+  margin: 10px 0;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-top: 1px solid #ddd;
+  font-size: 13px;
+  color: #888;
+}
+
+.footer-bottom .language {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-bottom img {
+  width: 20px;
+  height: 14px;
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #333;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: none;
+  min-width: 150px;
+  z-index: 999;
+}
+
+.dropdown-menu div {
+  padding: 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-menu div:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu div a {
+  color: #555;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu div:hover {
+  background-color: #f9f9f9;
+}
+
+.dropdown.show .dropdown-menu {
+  display: block;
+}

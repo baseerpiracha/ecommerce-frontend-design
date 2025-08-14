@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Summer Clothing - Enhanced E-commerce</title>
+  <link rel="stylesheet" href="css/enhanced-style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/6cf37bd2b2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="top-bar">
+      <a href="#" class="brand" aria-label="Home">
+        <img class="brand-icon" src="images/logo-colored.png" alt="Enhanced E-commerce Logo">
+        Enhanced Shop
+      </a>
+      <div class="search-container" role="search">
+        <input type="search" class="search-input" placeholder="Search products..." aria-label="Search products" />
+        <select class="search-select" aria-label="Select category">
+          <option value="">All Categories</option>
+          <option value="electronics">Electronics</option>
+          <option value="fashion">Fashion</option>
+        </select>
+        <button class="search-btn" aria-label="Perform search">Search</button>
+      </div>
+      <nav class="user-menu" aria-label="User navigation">
+        <div class="user-item" tabindex="0" role="link" aria-label="Profile">
+          <img src="images/profile-icon.png" alt="Profile">
+          Profile
+        </div>
+        <div class="user-item" tabindex="0" role="link" aria-label="Messages">
+          <img src="images/message-icon.png" alt="Messages">
+          Messages
+        </div>
+        <div class="user-item" tabindex="0" role="link" aria-label="Orders">
+          <img src="images/order-icon.png" alt="Orders">
+          Orders
+        </div>
+        <div class="user-item" tabindex="0" role="link" aria-label="Cart">
+          <img src="images/cart-icon.png" alt="Cart">
+          Cart
+        </div>
+      </nav>
+    </div>
+    <nav aria-label="Main navigation">
+      <div class="all-category-menu" role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">
+        <img src="images/all-category-icon.png" alt="All categories dropdown" class="drop-down">
+        All Categories
+      </div>
+      <div class="nav-links">
+        <a href="#" tabindex="0">Hot Offers</a>
+        <a href="#" tabindex="0">Gift Boxes</a>
+        <a href="#" tabindex="0">Projects</a>
+        <a href="clothing.html" tabindex="0">Clothing</a>
+        <a href="#" tabindex="0">Help <img src="images/dropdown-icon.png" alt="Help dropdown" class="drop-down"></a>
+      </div>
+      <div class="settings">
+        <div tabindex="0" role="button" aria-haspopup="true" aria-expanded="false" aria-label="Language and currency">
+          English, USD <img src="images/dropdown-icon.png" alt="Language dropdown" class="drop-down">
+        </div>
+        <div tabindex="0" role="button" aria-haspopup="true" aria-expanded="false" id="selected-country" aria-label="Shipping country">
+          Ship to <img class="flag" src="https://flagcdn.com/w20/de.png" alt="Germany Flag">
+          <img src="images/dropdown-icon.png" alt="Country dropdown" class="drop-down">
+        </div>
+        <div class="country-dropdown" id="country-dropdown" style="display: none;">
+          <div data-flag="https://flagcdn.com/w20/de.png" data-name="Germany">Germany</div>
+          <div data-flag="https://flagcdn.com/w20/pk.png" data-name="Pakistan">Pakistan</div>
+          <div data-flag="https://flagcdn.com/w20/us.png" data-name="United States">United States</div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb navigation">
+    <a href="#">Home</a> > <a href="#">Clothing</a> > <a href="#">Men's Wear</a> > Summer Clothing
+  </nav>
+
+  <div class="container">
+    <aside class="sidebar" aria-label="Filters">
+      <div class="filter-section">
+        <h3>Category</h3>
+        <ul>
+          <li><a href="#" aria-label="Mobile accessory">Mobile Accessory</a></li>
+          <li><a href="#" aria-label="Electronics">Electronics</a></li>
+          <li><a href="#" aria-label="Modern tech">Modern Tech</a></li>
+          <li><a href="#" aria-label="See all categories">See All</a></li>
+        </ul>
+      </div>
+      <div class="filter-section">
+        <h3>Brands</h3>
+        <label><input type="checkbox" /> Samsung</label>
+        <label><input type="checkbox" /> Apple</label>
+        <label><input type="checkbox" /> Huawei</label>
+        <label><input type="checkbox" /> Poco</label>
+        <label><input type="checkbox" /> Lenovo</label>
+        <li><a href="#" aria-label="See all brands">See All</a></li>
+      </div>
+      <div class="filter-section">
+        <h3>Material</h3>
+        <label><input type="checkbox" /> Metallic</label>
+        <label><input type="checkbox" /> Plastic Cover</label>
+        <label><input type="checkbox" /> 8GB RAM</label>
+        <label><input type="checkbox" /> Super Power</label>
+        <label><input type="checkbox" /> Large Memory</label>
+        <li><a href="#" aria-label="See all materials">See All</a></li>
+      </div>
+      <div class="filter-section">
+        <h3>Price Range</h3>
+        <div class="price-slider">
+          <input type="range" min="0" max="999999" value="0" aria-label="Price range slider" />
+          <div>Min <span id="max-price">Max</span></div>
+        </div>
+        <button class="btn" aria-label="Apply price filter">Apply</button>
+      </div>
+      <div class="filter-section">
+        <h3>Condition</h3>
+        <label><input type="radio" name="condition" value="any" /> Any</label>
+        <label><input type="radio" name="condition" value="refurbished" /> Refurbished</label>
+        <label><input type="radio" name="condition" value="brand-new" /> Brand New</label>
+        <label><input type="radio" name="condition" value="old" /> Old Items</label>
+      </div>
+      <div class="filter-section">
+        <h3>Ratings</h3>
+        <label><input type="checkbox" /> ***** (5)</label>
+        <label><input type="checkbox" /> **** (4)</label>
+        <label><input type="checkbox" /> *** (3)</label>
+        <label><input type="checkbox" /> ** (2)</label>
+        <label><input type="checkbox" /> * (1)</label>
+      </div>
+    </aside>
+
+    <main class="product-list" aria-label="Product listings">
+      <div class="product-header">
+        <h2>12,911 items in Mobile Accessory</h2>
+        <select aria-label="Verification filter">
+          <option>Verified Only</option>
+        </select>
+        <select aria-label="Sort by">
+          <option>Featured</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+        </select>
+        <div class="view-icons" role="toolbar">
+          <i class="fas fa-th" tabindex="0" role="button" aria-label="Grid view"></i>
+          <i class="fas fa-list" tabindex="0" role="button" aria-label="List view"></i>
+        </div>
+      </div>
+      <div class="products" role="list">
+        <div class="product-card" role="listitem">
+          <img src="https://via.placeholder.com/150" alt="Canon Camera EOS 200, Black 10x zoom" loading="lazy">
+          <h3>Canon Camera EOS 200, Black 10x zoom</h3>
+          <p class="price">$998.00 <del>$1128.00</del></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+          <i class="far fa-heart" tabindex="0" role="button" aria-label="Add to wishlist"></i>
+          <button class="btn primary" aria-label="Add to cart">Add to Cart</button>
+        </div>
+        <div class="product-card" role="listitem">
+          <img src="https://via.placeholder.com/150" alt="GoPro Hero 4K Action Camera - Black" loading="lazy">
+          <h3>GoPro Hero 4K Action Camera - Black</h3>
+          <p class="price">$998.00</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
+          <i class="far fa-heart" tabindex="0" role="button" aria-label="Add to wishlist"></i>
+          <button class="btn primary" aria-label="Add to cart">Add to Cart</button>
+        </div>
+        <div class="product-card" role="listitem">
+          <img src="https://via.placeholder.com/150" alt="GoPro Hero 4K Action Camera - Black" loading="lazy">
+          <h3>GoPro Hero 4K Action Camera - Black</h3>
+          <p class="price">$998.00</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
+          <i class="far fa-heart" tabindex="0" role="button" aria-label="Add to wishlist"></i>
+          <button class="btn primary" aria-label="Add to cart">Add to Cart</button>
+        </div>
+        <div class="product-card" role="listitem">
+          <img src="https://via.placeholder.com/150" alt="GoPro Hero 4K Action Camera - Black" loading="lazy">
+          <h3>GoPro Hero 4K Action Camera - Black</h3>
+          <p class="price">$998.00</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
+          <i class="far fa-heart" tabindex="0" role="button" aria-label="Add to wishlist"></i>
+          <button class="btn primary" aria-label="Add to cart">Add to Cart</button>
+        </div>
+        <div class="product-card" role="listitem">
+          <img src="https://via.placeholder.com/150" alt="GoPro Hero 4K Action Camera - Black" loading="lazy">
+          <h3>GoPro Hero 4K Action Camera - Black</h3>
+          <p class="price">$998.00</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
+          <i class="far fa-heart" tabindex="0" role="button" aria-label="Add to wishlist"></i>
+          <button class="btn primary" aria-label="Add to cart">Add to Cart</button>
+        </div>
+        <div class="product-card" role="listitem">
+          <img src="https://via.placeholder.com/150" alt="GoPro Hero 4K Action Camera - Black" loading="lazy">
+          <h3>GoPro Hero 4K Action Camera - Black</h3>
+          <p class="price">$998.00</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
+          <i class="far fa-heart" tabindex="0" role="button" aria-label="Add to wishlist"></i>
+          <button class="btn primary" aria-label="Add to cart">Add to Cart</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-section">
+          <a href="#" class="footer-brand" aria-label="Home">
+            <img class="footer-brand-icon" src="images/logo-colored.png" alt="Enhanced E-commerce Logo">
+            Enhanced Shop
+          </a>
+          <p class="footer-description">Discover the best products with us.</p>
+          <div class="social-icons" role="list">
+            <div class="social-icon" tabindex="0" role="listitem" aria-label="Facebook">
+              <img src="images/facebook-icon.png" alt="Facebook">
+            </div>
+            <div class="social-icon" tabindex="0" role="listitem" aria-label="Twitter">
+              <img src="images/twitter-icon.png" alt="Twitter">
+            </div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column" aria-label="About links">
+            <div class="footer-column-title">About</div>
+            <a href="#">About Us</a>
+            <a href="#">Find Store</a>
+          </div>
+          <div class="footer-column" aria-label="Support links">
+            <div class="footer-column-title">Support</div>
+            <a href="#">Help Center</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="copyright">© 2025 Enhanced E-commerce</div>
+        <div class="language-picker" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false" aria-label="Language selection">
+          <img class="flag" src="images/us-flag.png" alt="US Flag">
+          English
+          <a href="#" class="back-to-top" aria-label="Back to top"><img src="images/scroll-up-icon.png" alt="Scroll up"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript">
+    var gk_isXlsx = false;
+    var gk_xlsxFileLookup = {};
+    var gk_fileData = {};
+    function filledCell(cell) {
+      return cell !== '' && cell != null;
+    }
+    function loadFileData(filename) {
+      if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+        try {
+          var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+          var firstSheetName
